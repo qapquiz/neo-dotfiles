@@ -28,6 +28,10 @@ M.ui = {
     selected_item_bg = "colored", -- colored / simple
   },
 
+  telescope = {
+    style = "borderless", -- borderless / bordered
+  },
+
   ------------------------------- nvchad_ui modules -----------------------------
   statusline = {
     theme = "default", -- default/vscode/vscode_colored/minimal
@@ -39,6 +43,7 @@ M.ui = {
 
   -- lazyload it when there are 1+ buffers
   tabufline = {
+    enabled = true,
     lazyload = true,
     overriden_modules = nil,
   },
@@ -64,12 +69,21 @@ M.ui = {
       { "  Recent Files", "Spc f o", "Telescope oldfiles" },
       { "  Find Word", "Spc f w", "Telescope live_grep" },
       { "  Bookmarks", "Spc b m", "Telescope marks" },
-      { "  Themes", "Spc t f", "Telescope themes" },
+      { "  Themes", "Spc t h", "Telescope themes" },
+      { "  Mappings", "Spc c h", "NvCheatsheet" },
     },
   },
 
   cheatsheet = {
     theme = "grid", -- simple/grid
+  },
+
+  lsp = {
+    -- show function signatures i.e args as you type
+    signature = {
+      disabled = false,
+      silent = true, -- silences 'no signature help available' message from appearing
+    },
   },
 }
 
@@ -78,6 +92,6 @@ M.plugins = "" -- path i.e "custom.plugins" -> custom/plugins.lua only and not c
 M.lazy_nvim = {} -- config for lazy.nvim startup options
 
 -- these are default mappings, check core.mappings for table structure
-M.mappings = require "core.mappings"
+M.mappings = {}
 
 return M

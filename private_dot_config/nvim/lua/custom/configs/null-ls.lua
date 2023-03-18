@@ -15,6 +15,9 @@ local sources = {
   -- Lua
   b.formatting.stylua,
 
+  -- cpp
+  b.formatting.clang_format,
+
   -- shell
   b.formatting.shfmt,
 
@@ -23,9 +26,6 @@ local sources = {
 
   -- rust
   b.formatting.rustfmt,
-
-  -- cpp
-  b.formatting.clang_format,
 }
 
 null_ls.setup {

@@ -12,26 +12,25 @@ local plugins = {
       {
         "jose-elias-alvarez/null-ls.nvim",
         config = function()
-          require("custom.configs.null-ls")
+          require "custom.configs.null-ls"
         end,
       },
     },
-
     config = function()
-      require("plugins.configs.lspconfig")
-      require("custom.configs.lspconfig")
-    end,
+      require "plugins.configs.lspconfig"
+      require "custom.configs.lspconfig"
+    end, -- Override to setup mason-lspconfig
+  },
+  
+  -- override plugin configs
+  {
+    "williamboman/mason.nvim",
+    opts = overrides.mason
   },
 
-  -- overrde plugin configs
   {
     "nvim-treesitter/nvim-treesitter",
     opts = overrides.treesitter,
-  },
-
-  {
-    "williamboman/mason.nvim",
-    opts = overrides.mason,
   },
 
   {
